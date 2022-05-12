@@ -18,6 +18,7 @@
   --m-sm: 20px;
 
   --fs-lg: 3rem;
+  --fs-md: 2rem;
   --fs-sm: 1.25rem;
 }
 
@@ -59,6 +60,13 @@ body {
 /* ==================
   COMPONENTS
 ================== */
+.instructions {
+  margin-bottom: var(--gutter);
+  text-align: center;
+  font-size: var(--fs-md);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
 .timer {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
@@ -89,20 +97,32 @@ body {
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
 }
 
-.user-input button {
-  height: 40px;
-  width: 40px;
-  line-height: 40px;
+.user-input button,
+.btn-restart {
   font-size: var(--fs-sm);
   background-color: #000;
   color: #fff;
   border: none;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
   transition: box-shadow 0.4s, transform 0.4s;
 }
 
-.user-input button:hover {
+.user-input button {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+}
+
+.btn-restart {
+  display: none;
+  margin-top: var(--gutter);
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+.user-input button:hover,
+.btn-restart:hover {
   box-shadow: 0px 8px 8px -2px rgba(0, 0, 0, 0.5);
   transform: translateY(-5px);
 }
