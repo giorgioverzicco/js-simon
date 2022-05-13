@@ -62,6 +62,7 @@ function removeNumbersFromDOM(parent) {
 
 const maxTime = 30;
 const randomNumbers = [];
+const userNumbers = [];
 
 // DOM Elements
 const instructions = document.querySelector(".instructions");
@@ -89,9 +90,11 @@ randomNumbers.forEach((rand) => addNumberToDOM(rand, numbers));
 // start timer by Immediately-invoked Function Expression (IIFE)
 // https://www.geeksforgeeks.org/how-to-execute-setinterval-function-without-delay-for-the-first-time-in-javascript/
 let timerCount = maxTime;
+
 const timerId = setInterval(
   (function startTimer() {
     timer.innerHTML = timerCount--;
+
     if (timerCount < 0) {
       instructions.innerHTML = "Digita i numeri che ricordi!";
       // remove timer
@@ -104,12 +107,12 @@ const timerId = setInterval(
 
       clearInterval(timerId);
     }
+
     return startTimer;
   })(),
   1000
 );
 
-const userNumbers = [];
 sendBtn.addEventListener("click", function () {
   const num = Number(inputNumber.value);
   inputNumber.value = "";
