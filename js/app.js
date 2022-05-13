@@ -84,9 +84,7 @@ while (randomNumbers.length < 5) {
 }
 
 // add numbers into the dom
-randomNumbers.forEach((rand) => {
-  addNumberToDOM(rand, numbers);
-});
+randomNumbers.forEach((rand) => addNumberToDOM(rand, numbers));
 
 // start timer by Immediately-invoked Function Expression (IIFE)
 // https://www.geeksforgeeks.org/how-to-execute-setinterval-function-without-delay-for-the-first-time-in-javascript/
