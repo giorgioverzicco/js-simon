@@ -81,11 +81,9 @@ while (randomNumbers.length < 5) {
   const rand = Math.floor(Math.random() * 100) + 1;
   if (!randomNumbers.includes(rand)) {
     randomNumbers.push(rand);
+    addNumberToDOM(rand, numbers);
   }
 }
-
-// add numbers into the dom
-randomNumbers.forEach((rand) => addNumberToDOM(rand, numbers));
 
 // start timer by Immediately-invoked Function Expression (IIFE)
 // https://www.geeksforgeeks.org/how-to-execute-setinterval-function-without-delay-for-the-first-time-in-javascript/
